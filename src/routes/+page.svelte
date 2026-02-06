@@ -59,7 +59,7 @@
 				{#each experience as exp}
 					<div>
 						<div class="flex-row">
-							<strong class="flex-fill">{exp.role} - {exp.company}</strong>
+							<h6 class="flex-fill">{exp.role} - {exp.company}</h6>
 							<span class="text-secondary">{exp.date}</span>
 						</div>
 						<ul class="bullet-list">
