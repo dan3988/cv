@@ -5,7 +5,17 @@
 	import { browser } from "$app/environment";
 
 	const { preference } = theme;
-	const { name, profession, email, location, socials, summary, experience, skills } = data;
+	const { name, profession, email, website, location, socials, summary, experience, skills } = data;
+
+	function getWebsiteDisplay(url: string) {
+		if (url.startsWith('http://'))
+			return url.substring(7);
+
+		if (url.startsWith('https://'))
+			return url.substring(8);
+
+		return url;
+	}
 </script>
 <svelte:head>
 	<title>{profession ? `${name} | ${profession}` : name}</title>
@@ -31,9 +41,13 @@
 				{#if email}
 					<span>
 						<i class="bi-envelope-fill"></i>
-						<a href="mailto:{email}">
-							{email}
-						</a>
+						<a href="mailto:{email}">{email}</a>
+					</span>
+				{/if}
+				{#if website}
+					<span>
+						<i class="bi-globe"></i>
+						<a href={website} target="_blank">{getWebsiteDisplay(website)}</a>
 					</span>
 				{/if}
 				{#each socials ?? [] as { icon, title, href }}
@@ -46,7 +60,7 @@
 				{/each}
 				{#if location}
 					<span>
-						<i class="bi-globe"></i>
+						<i class="bi-geo-alt-fill"></i>
 						{location}
 					</span>
 				{/if}

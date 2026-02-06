@@ -15,6 +15,9 @@
 		"profession": {
 			"type": "string"
 		},
+		"website": {
+			"type": "string"
+		},
 		"email": {
 			"type": "string",
 			"format": "email"
