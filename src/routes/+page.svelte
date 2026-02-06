@@ -3,19 +3,11 @@
 	import theme from "$lib/theme";
 	import data from "$lib/data.json";
 	import { browser } from "$app/environment";
+	import Icon from "$lib/Icon.svelte";
+	import Link from "$lib/Link.svelte";
 
 	const { preference } = theme;
 	const { name, profession, email, photo, website, location, socials, summary, experience, skills } = data;
-
-	function getWebsiteDisplay(url: string) {
-		if (url.startsWith('http://'))
-			return url.substring(7);
-
-		if (url.startsWith('https://'))
-			return url.substring(8);
-
-		return url;
-	}
 </script>
 <svelte:head>
 	<title>{profession ? `${name} | ${profession}` : name}</title>
@@ -46,30 +38,13 @@
 			</div>
 			<div class="cv-box">
 				{#if email}
-					<span>
-						<i class="bi-envelope-fill"></i>
-						<a href="mailto:{email}">{email}</a>
-					</span>
+					<Link href="mailto:{email}" icon="envelope-fill" />
 				{/if}
 				{#if website}
-					<span>
-						<i class="bi-globe"></i>
-						<a href={website} target="_blank">{getWebsiteDisplay(website)}</a>
-					</span>
+					<Link href={website} target="_blank" icon="globe" />
 				{/if}
-				{#each socials ?? [] as { icon, title, href }}
-					<span>
-						{#if icon}
-							<i class="bi-{icon}"></i>
-						{/if}
-						<a {href} target="_blank">{title ?? href}</a>
-					</span>
-				{/each}
 				{#if location}
-					<span>
-						<i class="bi-geo-alt-fill"></i>
-						{location}
-					</span>
+					<Icon icon="geo-alt-fill">{location}</Icon>
 				{/if}
 			</div>
 		</div>
@@ -102,6 +77,15 @@
 				{/each}
 			</div>
 		</div>
+		{#if socials && socials.length}
+			<div class="cv-box flex-row socials gap-4 justify-content-center">
+				{#each socials as { icon, title, href }}
+					<Link {href} {icon} {title} target="_blank">
+						{title}
+					</Link>
+				{/each}
+			</div>
+		{/if}
 	</div>
 </main>
 <style>
@@ -161,6 +145,10 @@
 		&:not(:hover) {
 			opacity: 0.5;
 		}
+	}
+	
+	.socials {
+		flex-flow: row wrap;
 	}
 
 	@media print {
