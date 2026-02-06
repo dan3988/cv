@@ -11,7 +11,7 @@
 	<title>{profession ? `${name} | ${profession}` : name}</title>
 </svelte:head>
 {#if browser}
-	<div class="actions btn-group">
+	<div class="actions d-print-none btn-group">
 		<button class="btn btn-sm btn-secondary bi-circle-half" class:active={$preference === 'auto'} title="Auto" onclick={() => $preference = 'auto'}></button>
 		<button class="btn btn-sm btn-secondary bi-sun-fill" class:active={$preference === 'light'} title="Light" onclick={() => $preference = 'light'}></button>
 		<button class="btn btn-sm btn-secondary bi-moon-fill" class:active={$preference === 'dark'} title="Dark" onclick={() => $preference = 'dark'}></button>
@@ -137,10 +137,6 @@
 	}
 
 	@media print {
-		.actions {
-			display: none !important;
-		}
-
 		.cv-root {
 			font-size: 0.8em;
 		}

@@ -17,3 +17,9 @@ ul {
 	list-style: disc;
 	padding-left: 1em;
 }
+
+@media print {
+	body.bg-body-secondary {
+		background-color: transparent !important;
+	}
+}
