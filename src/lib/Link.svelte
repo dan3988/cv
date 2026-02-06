@@ -48,3 +48,11 @@
 		{/if}
 	</a>
 </Icon>
+<style>
+	@media print {
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+</style>
