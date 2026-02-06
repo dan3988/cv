@@ -5,8 +5,11 @@
 	import { browser } from "$app/environment";
 
 	const { preference } = theme;
-	const { name, email, location, socials, summary, experience, skills } = data;
+	const { name, profession, email, location, socials, summary, experience, skills } = data;
 </script>
+<svelte:head>
+	<title>{profession ? `${name} | ${profession}` : name}</title>
+</svelte:head>
 {#if browser}
 	<div class="actions btn-group">
 		<button class="btn btn-sm btn-secondary bi-circle-half" class:active={$preference === 'auto'} title="Auto" onclick={() => $preference = 'auto'}></button>
@@ -20,6 +23,9 @@
 		<div class="cv-group">
 			<div class="cv-box flex-col justify-content-center">
 				<h1 class="m-0">{name}</h1>
+				{#if profession}
+					<span>{profession}</span>
+				{/if}
 			</div>
 			<div class="cv-box">
 				{#if email}
