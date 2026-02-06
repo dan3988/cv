@@ -5,7 +5,7 @@
 	import { browser } from "$app/environment";
 
 	const { preference } = theme;
-	const { name, profession, email, website, location, socials, summary, experience, skills } = data;
+	const { name, profession, email, photo, website, location, socials, summary, experience, skills } = data;
 
 	function getWebsiteDisplay(url: string) {
 		if (url.startsWith('http://'))
@@ -31,11 +31,18 @@
 <main class="container bg-body my-5 p-4">
 	<div class="cv-root">
 		<div class="cv-group">
-			<div class="cv-box flex-col justify-content-center">
-				<h1 class="m-0">{name}</h1>
-				{#if profession}
-					<span>{profession}</span>
-				{/if}
+			<div class="cv-box justify-content-center">
+				<div class="flex-row gap-2 align-items-center">
+					{#if photo}
+						<img class="profile-photo border rounded-circle" src={photo} alt="Profile" />
+					{/if}
+					<div>
+						<h1 class="m-0">{name}</h1>
+						{#if profession}
+							<span>{profession}</span>
+						{/if}
+					</div>
+				</div>
 			</div>
 			<div class="cv-box">
 				{#if email}
@@ -136,6 +143,12 @@
 				border-top-style: solid;
 			}
 		}
+	}
+
+	.profile-photo {
+		aspect-ratio: 1;
+		height: 7em;
+		object-fit: cover;
 	}
 
 	.actions {
