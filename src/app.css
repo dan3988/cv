@@ -1,0 +1,19 @@
+.flex-row {
+	display: flex !important;
+	flex-direction: row !important;
+}
+
+.flex-col {
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.bullet-list {
+	list-style: disc;
+	padding-left: 1em;
+}
