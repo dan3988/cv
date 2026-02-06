@@ -20,7 +20,7 @@
 		<button class="btn btn-sm btn-secondary bi-printer-fill" title="Print" onclick={() => print()}></button>
 	</div>
 {/if}
-<main class="container bg-body my-5 p-4">
+<main class="container bg-body my-4 p-4">
 	<div class="cv-root">
 		<div class="cv-group">
 			<div class="cv-box justify-content-center">
@@ -152,6 +152,11 @@
 	}
 
 	@media print {
+		main {
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
 		.cv-root {
 			font-size: 0.8em;
 		}
