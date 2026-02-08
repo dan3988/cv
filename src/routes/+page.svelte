@@ -51,11 +51,11 @@
 		<div class="cv-box">{summary}</div>
 		<div class="cv-group">
 			<div class="cv-box">
-				<h4>Experience</h4>
+				<h3>Experience</h3>
 				{#each experience as exp}
 					<div>
-						<div class="flex-row">
-							<h6 class="flex-fill">{exp.role} - {exp.company}</h6>
+						<div class="flex-row h5">
+							<span class="flex-fill">{exp.role} - {exp.company}</span>
 							<span class="text-secondary">{exp.date}</span>
 						</div>
 						<ul class="bullet-list">
@@ -68,7 +68,7 @@
 			</div>
 			<div class="cv-box">
 				{#each Object.entries(skills) as [group, skillList]}
-					<h4>{group}</h4>
+					<h3>{group}</h3>
 					<ul class="bullet-list">
 						{#each skillList as skill}
 							<li>{skill}</li>
