@@ -1,10 +1,11 @@
 <script lang="ts">
 	import "../app.css";
 	import theme from "$lib/theme";
-	import data from "$lib/data.json";
+	import data from "$lib/data";
 	import { browser } from "$app/environment";
 	import Icon from "$lib/Icon.svelte";
 	import Link from "$lib/Link.svelte";
+	import Markdown from "svelte-exmarkdown";
 
 	const { preference } = theme;
 	const {
@@ -26,6 +27,7 @@
 <svelte:head>
 	<title>{profession ? `${name} | ${profession}` : name}</title>
 </svelte:head>
+
 {#if browser}
 	<div class="actions d-print-none btn-group">
 		<button class="btn btn-sm btn-secondary bi-circle-half" class:active={$preference === 'auto'} title="Auto" onclick={() => $preference = 'auto'}></button>
@@ -66,7 +68,11 @@
 				{/if}
 			</div>
 		</div>
-		<div class="cv-box">{summary}</div>
+		{#if summary}
+			<div class="cv-box">
+				<Markdown md={summary} />
+			</div>
+		{/if}
 		<div class="cv-group">
 			<div class="cv-box">
 				<h3>Experience</h3>
@@ -76,22 +82,16 @@
 							<span class="flex-fill">{exp.role} - {exp.company}</span>
 							<span class="text-secondary">{exp.date}</span>
 						</div>
-						<ul class="bullet-list">
-							{#each exp.skills as skill}
-								<li>{skill}</li>
-							{/each}
-						</ul>
+						{#if exp.skills}
+							<Markdown md={exp.skills} /> 
+						{/if}
 					</div>
 				{/each}
 			</div>
 			<div class="cv-box">
-				{#each skillEntries as [group, skillList]}
+				{#each skillEntries as [group, content]}
 					<h3>{group}</h3>
-					<ul class="bullet-list">
-						{#each skillList as skill}
-							<li>{skill}</li>
-						{/each}
-					</ul>
+					<Markdown md={content} />
 				{/each}
 			</div>
 		</div>
