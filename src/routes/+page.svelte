@@ -7,8 +7,22 @@
 	import Link from "$lib/Link.svelte";
 
 	const { preference } = theme;
-	const { name, profession, email, photo, website, location, socials, summary, experience, skills } = data;
+	const {
+		name,
+		profession,
+		email,
+		photo,
+		website,
+		location,
+		socials = [],
+		summary,
+		experience = [],
+		skills,
+	} = data;
+
+	const skillEntries = $derived(Object.entries(skills ?? {}));
 </script>
+
 <svelte:head>
 	<title>{profession ? `${name} | ${profession}` : name}</title>
 </svelte:head>
@@ -26,7 +40,11 @@
 			<div class="cv-box justify-content-center">
 				<div class="flex-row gap-2 align-items-center">
 					{#if photo}
-						<img class="profile-photo border rounded-circle" src={photo} alt="Profile" />
+						<img
+							class="profile-photo border rounded-circle"
+							src={photo}
+							alt="Profile"
+						/>
 					{/if}
 					<div>
 						<h1 class="m-0">{name}</h1>
@@ -67,7 +85,7 @@
 				{/each}
 			</div>
 			<div class="cv-box">
-				{#each Object.entries(skills) as [group, skillList]}
+				{#each skillEntries as [group, skillList]}
 					<h3>{group}</h3>
 					<ul class="bullet-list">
 						{#each skillList as skill}
@@ -77,7 +95,7 @@
 				{/each}
 			</div>
 		</div>
-		{#if socials && socials.length}
+		{#if socials.length}
 			<div class="cv-box flex-row socials gap-4 justify-content-center">
 				{#each socials as { icon, title, href }}
 					<Link {href} {icon} {title} target="_blank">
@@ -160,13 +178,13 @@
 		top: 0;
 		left: 0;
 		margin: 1em;
-		transition: opacity ease-in-out .15s;
+		transition: opacity ease-in-out 0.15s;
 
 		&:not(:hover) {
 			opacity: 0.5;
 		}
 	}
-	
+
 	.socials {
 		flex-flow: row wrap;
 	}
