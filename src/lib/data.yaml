@@ -40,7 +40,7 @@ skills:
 experience:
 - company: OneWizard
   role: Software Developer
-  date: 2023 - Present
+  date: 2023 - 2026
   skills: |-
     - Developed a flutter application for tracking goods transported by HGV drivers with GPS updates, turn-by-turn navigation and instant messaging between hauliers and drivers
     - Developed fully tested .NET Core APIs for managing and synchronising data between hauliers and drivers
