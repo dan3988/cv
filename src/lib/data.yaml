@@ -24,13 +24,13 @@ skills:
     - SQL
     - CSS / SASS / LESS
     - HTML5
-    - Svelte
   Skills: |-
     - .NET
     - Flutter
     - Xamarin / .NET MAUI
     - ASP.NET
     - Entity Framework
+    - Svelte
     - NodeJS
     - MSSQL
     - Git
@@ -43,7 +43,7 @@ experience:
   date: 2023 - 2026
   skills: |-
     - Developed a flutter application for tracking goods transported by HGV drivers with GPS updates, turn-by-turn navigation and instant messaging between hauliers and drivers
-    - Developed fully tested .NET Core APIs for managing and synchronising data between hauliers and drivers
+    - Developed .NET Core APIs for managing and synchronising data between hauliers and drivers with full integration test coverage
     - Worked on features and improvements for a SvelteKit CRM portal
     - Created and maintained a cross-platform .NET MAUI application for submitting building regulation compliance reports
 - company: WorkMobile
@@ -53,6 +53,7 @@ experience:
     - Collaborated with other developers and the QA team in an agile environment to deliver features within sprint deadlines
     - Identified long running website operations and implemented significant performance optimizations
     - Added features and fixed bugs in the WorkMobile Xamarin application and legacy Java Android app
+    - Worked on an Angular web portal for viewing data and scheduling jobs for the mobile app
     - Prototyped a Blazor WebAssembly website to mirror the functionality of the mobile application
     - Worked with the support team to investigate and resolve issues reported by end users
     - Created and maintained Azure Pipelines for new and existing projects
