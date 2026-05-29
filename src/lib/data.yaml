@@ -1,6 +1,6 @@
 "$schema": "./data.schema.json"
 name: Daniel Pickett
-profession: Software Developer
+profession: Software Developer | 7+ Years Experience
 email: daniel.pickett@hotmail.co.uk
 website: https://www.dpickett.co.uk
 location: Warrington, England
@@ -43,7 +43,7 @@ experience:
   date: 2023 - 2026
   skills: |-
     - Developed a flutter application for tracking goods transported by HGV drivers with GPS updates, turn-by-turn navigation and instant messaging between hauliers and drivers
-    - Developed .NET Core APIs for managing and synchronising data between hauliers and drivers with full integration test coverage
+    - Developed C# .NET Core APIs for managing and synchronising data between hauliers and drivers with full integration test coverage
     - Worked on features and improvements for a SvelteKit CRM portal
     - Created and maintained a cross-platform .NET MAUI application for submitting building regulation compliance reports
 - company: WorkMobile
@@ -52,7 +52,8 @@ experience:
   skills: |-
     - Collaborated with other developers and the QA team in an agile environment to deliver features within sprint deadlines
     - Identified long running website operations and implemented significant performance optimizations
-    - Added features and fixed bugs in the WorkMobile Xamarin application and legacy Java Android app
+    - Developed a modern C# .NET Core API to replace a legacy SOAP API and web forms application
+    - Added features and fixed bugs in the WorkMobile C# Xamarin application and legacy Java Android app
     - Worked on an Angular web portal for viewing data and scheduling jobs for the mobile app
     - Prototyped a Blazor WebAssembly website to mirror the functionality of the mobile application
     - Worked with the support team to investigate and resolve issues reported by end users
