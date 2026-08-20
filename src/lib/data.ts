@@ -6,6 +6,7 @@ export interface Data {
 	profession?: string;
 	photo?: string;
 	email?: string;
+	telephone?: string;
 	website?: string;
 	location?: string;
 	summary?: string;

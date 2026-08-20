@@ -12,6 +12,7 @@
 		name,
 		profession,
 		email,
+		telephone,
 		photo,
 		website,
 		location,
@@ -59,6 +60,9 @@
 			<div class="cv-box">
 				{#if email}
 					<Link href="mailto:{email}" icon="envelope-fill" />
+				{/if}
+				{#if telephone}
+					<Link href="tel:{telephone}" icon="telephone-fill" />
 				{/if}
 				{#if website}
 					<Link href={website} target="_blank" icon="globe" />
