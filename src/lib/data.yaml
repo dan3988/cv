@@ -46,13 +46,13 @@ experience:
     - Utilised test-driven development (TDD) to develop robust .NET Core REST APIs
     - Worked on features and improvements for a SvelteKit CRM portal
     - Created and maintained a cross-platform .NET MAUI application for submitting building regulation compliance reports
-    - Created CI/CD Pipelines in Azure DevOps to deploy mobile and web applications
+    - Created CI/CD Pipelines in Azure DevOps for deploying web applications to Azure and mobile apps to the app store
 - company: WorkMobile
   role: Software Developer
   date: 2019 - 2023
   skills: |-
     - Collaborated with other developers and the QA team in an agile environment to deliver features within sprint deadlines
-    - Deployed web applications to Microsoft Azure and used Application Insights to investigate issues
+    - Managed web applications in Microsoft Azure and used Application Insights to investigate issues
     - Identified long running website operations and implemented significant performance optimisations
     - Developed a modern C# .NET Core REST API utilising clean architecture and TDD to replace legacy .NET Framework SOAP and Web Forms applications
     - Worked on an Angular web portal for viewing data and scheduling jobs for the mobile app
